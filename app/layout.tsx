@@ -1,4 +1,12 @@
+import { Navbar } from '@/components';
 import './globals.css'
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({
+    weight: ["400", "700"],
+    subsets: ["latin"],
+    variable: "--font-montserrat",
+});
 
 export const metadata = {
     title: 'Software Developer - Aleksa Marjanov',
@@ -12,7 +20,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body className={`${montserrat.className} overflow-hidden w-full min-h-screen bg-white/80`} >
+                <Navbar />
+                {children}
+            </body>
         </html>
     )
 }
