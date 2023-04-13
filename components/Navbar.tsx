@@ -1,9 +1,11 @@
 'use client';
 
 import React from 'react'
+import { motion } from 'framer-motion';
 import { Logo } from '.'
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
+import { GithubIcon, LinkedInIcon, TwitterIcon } from './Icons';
 
 type LinkProps = {
     href: string;
@@ -33,17 +35,34 @@ const Navbar = () => {
                 <CustomLink href="/Projects" title="Projects" className="mx-4" />
                 <CustomLink href="/Contact" title="Contact" className="ml-4" />
             </nav>
-            <nav>
-                <Link href="/" target={"_blank"}>T</Link>
-                <Link href="/" target={"_blank"}>T</Link>
-                <Link href="/" target={"_blank"}>T</Link>
-                <Link href="/" target={"_blank"}>T</Link>
-                <Link href="/" target={"_blank"}>T</Link>
+            <nav className="flex items-center justify-center flex-wrap">
+                <motion.a
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-6 mr-3"
+                    href="https://twitter.com/Beli1337" target={"_blank"}>
+                    <TwitterIcon />
+                </motion.a>
+                <motion.a
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-6 mx-3"
+                    href="https://github.com/AleksaMarjanov" target={"_blank"}>
+                    <GithubIcon />
+                </motion.a>
+                <motion.a
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-6 ml-3"
+                    href="https://linkedin.com/in/AleksaMarjanov" target={"_blank"}>
+                    <LinkedInIcon />
+                </motion.a>
             </nav>
+
             <div className="absolute left-[50%] top-2 translate-x-[-50%]">
                 <Logo />
             </div>
-        </header>
+        </header >
     )
 }
 
