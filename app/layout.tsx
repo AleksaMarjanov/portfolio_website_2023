@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${montserrat.className} overflow-hidden w-full min-h-screen bg-white/80`} >
+            <body className={`${montserrat.className} w-full min-h-screen bg-white/80`} >
                 <Navbar />
                 {children}
             </body>

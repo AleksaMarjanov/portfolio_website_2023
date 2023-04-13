@@ -46,14 +46,13 @@ const Navbar = () => {
                 <motion.a
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-6 mx-3"
+                    className="w-6 mr-3"
                     href="https://github.com/AleksaMarjanov" target={"_blank"}>
                     <GithubIcon />
                 </motion.a>
                 <motion.a
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-6 ml-3"
                     href="https://linkedin.com/in/AleksaMarjanov" target={"_blank"}>
                     <LinkedInIcon />
                 </motion.a>
