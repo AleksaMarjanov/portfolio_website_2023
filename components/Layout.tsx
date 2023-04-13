@@ -11,7 +11,7 @@ export default function Layout(
     {
 
         return (
-            <div className={`w-full h-full inline-block z-0 bg-white/80 p-32 ${className}`}>
+            <div className={`w-full h-full inline-block z-0 bg-white/80 p-32 mt-0 ${className}`}>
                 {children}
             </div>
         )
