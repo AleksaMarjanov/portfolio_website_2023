@@ -1,6 +1,6 @@
 import { AnimatedText, Layout } from '@/components';
 import Image from 'next/image';
-import profilePic from '../public/headshot.png'
+import profilePic from '../public/digitalArt.png'
 import Link from 'next/link';
 import light from '../public/light.svg'
 import { LinkArrow } from '@/components/Icons';
