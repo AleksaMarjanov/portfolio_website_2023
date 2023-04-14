@@ -8,7 +8,7 @@ import { LinkArrow } from '@/components/Icons';
 
 export default function Home() {
     return (
-        <main className="flex items-center text-black w-full min-h-[60vh]">
+        <main className="flex items-center text-black w-full min-h-screen">
             <div className="pt-0">
                 <Layout >
                     <div className='flex flex-col lg:flex-row items-center justify-between w-full'>
