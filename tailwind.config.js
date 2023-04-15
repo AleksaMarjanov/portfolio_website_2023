@@ -12,7 +12,7 @@ module.exports = {
                 light: "#f5f5f5",
             },
             backgroundImage: {
-                circularLight: 'repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f6f6f6 5px, #f6f6f6 100px);',
+                circularLight: 'repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 100px);',
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic':
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
