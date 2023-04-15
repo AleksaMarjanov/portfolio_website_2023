@@ -28,7 +28,7 @@ const CustomLink = ({ href, title, className }: LinkProps) => {
 
 const Navbar = () => {
     return (
-        <header className="w-full px-32 py-8 font-medium flex items-center justify-between">
+        <header className="md:flex hidden w-full px-32 py-8 font-medium items-center justify-between">
             <nav>
                 <CustomLink href="/" title="Home" className="mr-4" />
                 <CustomLink href="/about" title="About" className="mx-4" />

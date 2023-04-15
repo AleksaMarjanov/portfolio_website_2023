@@ -2,11 +2,12 @@ import { AnimatedText, Layout } from '@/components';
 import Image from 'next/image';
 import profilePic from '../public/digitalArt.png'
 import Link from 'next/link';
-import light from '../public/light.svg'
+// import light from '../public/light.svg'
 import { LinkArrow } from '@/components/Icons';
 
 
-export default function Home() {
+const Home = () => {
+
     return (
         <main className="flex items-center text-black w-full min-h-screen">
             <div className="pt-0">
@@ -51,3 +52,5 @@ hover:bg-white/80 hover:text-[#F7AB0A] border border-solid border-transparent ho
         </main >
     )
 }
+
+export default Home;
