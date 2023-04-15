@@ -4,3 +4,4 @@ export { default as Layout } from './Layout';
 export { default as AnimatedText } from './AnimatedText';
 export { default as Footer } from './Footer';
 export { default as AboutComponent } from './AboutComponent';
+export { default as Skills } from './Skills';

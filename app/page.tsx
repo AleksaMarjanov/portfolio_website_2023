@@ -9,7 +9,7 @@ import { LinkArrow } from '@/components/Icons';
 const Home = () => {
 
     return (
-        <main className="flex items-center text-black w-full min-h-screen">
+        <main className="flex items-center text-dark w-full min-h-screen">
             <div className="pt-0">
                 <Layout >
                     <div className='flex flex-col lg:flex-row items-center justify-between w-full'>
@@ -27,8 +27,8 @@ const Home = () => {
                                 <b> digi</b>tal <b>dre</b>ams <b>to</b> <b>li</b>fe <b>wi</b>th <b>visi</b>onary <b>fro</b>nt-end <b>deve</b>lopment.</span>
                             <div className='flex items-center self-start mt-2 gap-2 md:gap-4 '>
                                 <Link
-                                    className="flex items-center bg-[#F7AB0A] text-white/80 p-2.5 px-65 rounded-lg text-lg font-semibold
-hover:bg-white/80 hover:text-[#F7AB0A] border border-solid border-transparent hover:border-[#F7AB0A] transition-all border-2 duration-300 ease-in-out
+                                    className="flex items-center bg-[#F7AB0A] text-/80 p-2.5 px-65 rounded-lg text-lg font-semibold
+hover:bg-/80 hover:text-[#F7AB0A] border border-solid border-transparent hover:border-[#F7AB0A] transition-all border-2 duration-300 ease-in-out
                                     "
                                     href="/AleksaMarjanovResume2023.pdf"
                                     download={true}

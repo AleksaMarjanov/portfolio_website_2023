@@ -23,7 +23,7 @@ const AnimatedText = ({ text, className = "" }: Props) => {
                 variants={quote}
                 initial="initial"
                 animate="animate"
-                className={` ${className} inline-block w-full text-black font-bold capitalize `}>
+                className={` ${className} inline-block w-full text-dark font-bold capitalize `}>
                 {
                     text.split(" ").map((word: string, index: number) =>
                         <motion.span
