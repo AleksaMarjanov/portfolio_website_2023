@@ -5,7 +5,6 @@ import Link from 'next/link';
 // import light from '../public/light.svg'
 import { LinkArrow } from '@/components/Icons';
 
-
 const Home = () => {
 
     return (
@@ -30,7 +29,7 @@ const Home = () => {
                                     className="flex items-center bg-[#F7AB0A] text-light p-2.5 px-65 rounded-lg text-lg font-semibold
 hover:bg-light hover:text-[#F7AB0A] border border-solid border-transparent hover:border-[#F7AB0A] transition-all border-2 duration-300 ease-in-out
                                     "
-                                    href="/AleksaMarjanovResume2023.pdf"
+                                    href="../public/AleksaMarjanovResume2023.pdf"
                                     download={true}
                                     target={"_blank"}>
                                     Resume
@@ -41,7 +40,6 @@ hover:bg-light hover:text-[#F7AB0A] border border-solid border-transparent hover
                                     href="mailto:aleksa.marjanov@outlook.com">Contact</Link>
                             </div>
                         </div>
-
                     </div>
                 </Layout>
                 {/* <div className='absolute right-4 bottom-32 inline-block w-24'> */}
