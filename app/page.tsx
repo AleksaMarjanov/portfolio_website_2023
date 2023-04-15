@@ -27,8 +27,8 @@ const Home = () => {
                                 <b> digi</b>tal <b>dre</b>ams <b>to</b> <b>li</b>fe <b>wi</b>th <b>visi</b>onary <b>fro</b>nt-end <b>deve</b>lopment.</span>
                             <div className='flex items-center self-start mt-2 gap-2 md:gap-4 '>
                                 <Link
-                                    className="flex items-center bg-[#F7AB0A] text-/80 p-2.5 px-65 rounded-lg text-lg font-semibold
-hover:bg-/80 hover:text-[#F7AB0A] border border-solid border-transparent hover:border-[#F7AB0A] transition-all border-2 duration-300 ease-in-out
+                                    className="flex items-center bg-[#F7AB0A] text-light p-2.5 px-65 rounded-lg text-lg font-semibold
+hover:bg-light hover:text-[#F7AB0A] border border-solid border-transparent hover:border-[#F7AB0A] transition-all border-2 duration-300 ease-in-out
                                     "
                                     href="/AleksaMarjanovResume2023.pdf"
                                     download={true}

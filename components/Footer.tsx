@@ -5,8 +5,8 @@ import Layout from './Layout'
 const Footer = () => {
     return (
         <footer className="w-full border-t-2 border-solid border-[#F7AB0A] font-medium text-lg ">
-            {/* @ts-ignore */}
-            <div className='w-full h-full inline-block z-0 bg-/80 p-32 py-8 flex items-center justify-between'>
+
+            <div className='w-full h-full inline-block z-0 bg-light p-32 py-8 flex items-center justify-between'>
                 <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
                 <div className="">
                     by&nbsp;
