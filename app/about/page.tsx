@@ -32,9 +32,9 @@ const About = () => {
                                 and I'm excited to bring my skills and dedication to your next project.</p>
                         </div>
 
-                        <div className='col-span-3 relative items-center justify-center object-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-white p-8'>
+                        <div className='md:max-w-[400px] col-span-3 relative items-center justify-center object-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-white p-8'>
                             <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-[#F7AB0A]' />
-                            <Image src={profilePic} alt="AleksaMarjanov" className='w-full  h-auto rounded-2xl' />
+                            <Image src={profilePic} alt="AleksaMarjanov" className='w-full h-auto rounded-2xl' />
                         </div>
                     </div>
                 </Layout>
