@@ -51,17 +51,17 @@ const AboutComponent = () => {
                                 <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>About Me</h2>
                                 <motion.p className="font-medium">Hi, I am Aleksa Marjanov, a software developer with over a year of experience
                                     in the field. My passion lies in creating beautiful,
-                                    user-focused interfaces that bring my clients' visions to life.
+                                    user-focused interfaces that bring my client&apos;s visions to life.
                                 </motion.p>
                                 <p className="my-4 font-medium">
                                     I am always looking for innovative ways to solve problems and approach every project -
-                                    whether it's a website, mobile app, or any other software development project - with full commitment to creating
+                                    whether it&apos;s a website, mobile app, or any other software development project - with full commitment to creating
                                     a user-centered and functional end-user experience.
                                 </p>
                                 <p className="my-4 font-medium">
                                     My goal is to deliver digital solutions that not only
                                     meet but exceed expectations,
-                                    and I'm excited to bring my skills and dedication to your next project.</p>
+                                    and I&apos;m excited to bring my skills and dedication to your next project.</p>
                             </div>
 
                             <div className='md:max-w-[300px] col-span-2 relative items-center justify-center object-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light p-8'>

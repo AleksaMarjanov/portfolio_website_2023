@@ -22,7 +22,7 @@ const Skill = ({ name, x, y }: SkillProps) => {
             transition={{ duration: 1.5 }}
         >
             {/* {name} */}
-            <Image src={ReactPic} alt="skills" priority className="w-16  h-16 object-center object-contain" />
+            <Image src={ReactPic} alt="skills" priority className="w-16  h-16 object-center object-contai " />
         </motion.div>
     )
 }
