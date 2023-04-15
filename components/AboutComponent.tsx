@@ -42,7 +42,7 @@ const AboutComponent = () => {
 
     return (
         <>
-            <main className="bg-light w-full flex flex-col items-center justify-center">
+            <main className="bg-light z-0 relative w-full flex flex-col items-center justify-center">
                 <div className="pt-16">
                     <Layout>
                         <AnimatedText text="Meet the Passionate Problem Solver Behind the Code" className="mb-16 !text-6xl !text-center" />
@@ -64,12 +64,12 @@ const AboutComponent = () => {
                                     and I'm excited to bring my skills and dedication to your next project.</p>
                             </div>
 
-                            <div className='md:max-w-[300px] col-span-3 relative items-center justify-center object-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light p-8'>
+                            <div className='md:max-w-[300px] col-span-2 relative items-center justify-center object-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light p-8'>
                                 <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-[#F7AB0A]' />
                                 <Image src={profilePic} alt="AleksaMarjanov" className='w-full h-auto rounded-2xl' />
                             </div>
 
-                            <div className='col-span-2 flex flex-col items-center justify-between'>
+                            <div className='col-span-3 flex flex-col items-center justify-between'>
 
                                 <div>
                                     <span className="inline-block text-6xl font-bold">

@@ -9,7 +9,7 @@ import { LinkArrow } from '@/components/Icons';
 const Home = () => {
 
     return (
-        <main className="flex items-center text-dark w-full min-h-screen">
+        <main className="bg-light flex items-center text-dark w-full min-h-screen">
             <div className="pt-0">
                 <Layout >
                     <div className='flex flex-col lg:flex-row items-center justify-between w-full'>
