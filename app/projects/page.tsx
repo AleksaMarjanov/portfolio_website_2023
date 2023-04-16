@@ -17,7 +17,7 @@ const Projects = () => {
                     <div className="grid grid-cols-12 gap-24" >
 
                         <div className="col-span-12">
-                            <FeaturedProject type={type} title={title} summary={summary} img={img} link={link} github={github} />
+                            <FeaturedProject type="" title="" summary="" img="" link="" github="" />
                         </div>
                         <div className="col-span-6">
                             Project1

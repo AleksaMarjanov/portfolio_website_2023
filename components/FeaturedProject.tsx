@@ -3,6 +3,7 @@
 import React from 'react'
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import { GithubIcon } from './Icons';
 
 type Props = {
     type: string,
@@ -30,9 +31,9 @@ const FeaturedProject = ({ type, title, summary, img, link, github }: Props) => 
                 <Link href={link} target="_blank">
                     <h2>{title}</h2>
                 </Link>
-                <p>summary</p>
+                <p>{summary}</p>
                 <div>
-                    <Link href={github} target="_blank">GithubIcon</Link>
+                    <Link href={github} target="_blank"><GithubIcon /></Link>
                     <Link href={link} target="_blank">Visit Project</Link>
                 </div>
             </div>
