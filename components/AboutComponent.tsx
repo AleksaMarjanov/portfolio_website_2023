@@ -2,10 +2,14 @@
 
 import { AnimatedText, Education, Experience, Layout, Skills } from '@/components'
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import profilePic from '../public/headshot.png'
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
+import { groq } from 'next-sanity';
+import { client } from '@/lib/sanity.client';
+import { About } from '@/typings';
+import { staggerContainer, textVariant } from '@/utils/motion';
 
 
 //TODO: Add proper value type instead of any
@@ -39,6 +43,22 @@ const AnimatedNumbers = ({ value }: any) => {
 }
 
 const AboutComponent = () => {
+    const [about, setAbout] = useState([])
+
+    const query = groq`
+    *[_type == 'about']
+    `
+
+    const fetchAbout = async () => {
+        const data = await client.fetch(query)
+        setAbout(data)
+    }
+
+    useEffect(() => {
+        fetchAbout()
+    }, [])
+
+    console.log({ about })
 
     return (
         <>
@@ -49,19 +69,34 @@ const AboutComponent = () => {
                         <div className='grid w-full grid-cols-8 gap-16'>
                             <div className="w-full col-span-3 flex flex-col items-start justify-start">
                                 <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>About Me</h2>
-                                <motion.p className="font-medium">Hi, I am Aleksa Marjanov, a software developer with over a year of experience
-                                    in the field. My passion lies in creating beautiful,
-                                    user-focused interfaces that bring my client&apos;s visions to life.
-                                </motion.p>
-                                <p className="my-4 font-medium">
-                                    I am always looking for innovative ways to solve problems and approach every project -
-                                    whether it&apos;s a website, mobile app, or any other software development project - with full commitment to creating
-                                    a user-centered and functional end-user experience.
-                                </p>
-                                <p className="my-4 font-medium">
-                                    My goal is to deliver digital solutions that not only
-                                    meet but exceed expectations,
-                                    and I&apos;m excited to bring my skills and dedication to your next project.</p>
+                                {about?.map((item: About) => (
+                                    <motion.div
+                                        variants={staggerContainer}
+                                        initial="hidden"
+                                        whileInView="show"
+                                        viewport={{ once: true }}
+                                        key={item._id} >
+
+                                        <motion.p className="font-medium"
+                                            variants={textVariant(0.3)}
+                                        >
+                                            {item.paragraph1}
+                                        </motion.p>
+
+                                        <motion.p
+                                            variants={textVariant(0.45)}
+
+                                            className="my-4 font-medium">
+                                            {item.paragraph2}
+                                        </motion.p>
+
+                                        <motion.p
+                                            variants={textVariant(0.65)}
+                                            className="my-4 font-medium">
+                                            {item.paragraph3}
+                                        </motion.p>
+                                    </motion.div>
+                                ))}
                             </div>
 
                             <div className='md:max-w-[300px] col-span-2 relative items-center justify-center object-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light p-8'>
