@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedText, Experience, Layout, Skills } from '@/components'
+import { AnimatedText, Education, Experience, Layout, Skills } from '@/components'
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
@@ -96,6 +96,7 @@ const AboutComponent = () => {
 
                         <Skills />
                         <Experience />
+                        <Education />
                     </Layout>
                 </div >
             </main >
