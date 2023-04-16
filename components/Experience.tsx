@@ -19,7 +19,11 @@ const Details = ({ position, company, companyLink, time, address, work }: Detail
 
     return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
         <LiIcon reference={ref} />
-        <div >
+        <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 0.5, type: "spring" }}
+        >
             <h3 className='capitlize font-bold text-2xl'>
                 {position}&nbsp;<a href={companyLink} target="_blank" className="text-[#F7AB0A] capitlize">@{company}</a>
             </h3>
@@ -29,8 +33,8 @@ const Details = ({ position, company, companyLink, time, address, work }: Detail
             <p className='font-medium w-full'>
                 {work}
             </p>
-        </div>
-    </li>
+        </motion.div>
+    </li >
 }
 
 
