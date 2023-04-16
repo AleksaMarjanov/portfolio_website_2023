@@ -22,9 +22,19 @@ export default defineType({
             type: 'string'
         }),
         defineField({
-            name: 'time',
-            title: 'Time',
+            name: 'dateStarted',
+            title: 'date Started',
             type: 'date'
+        }),
+        defineField({
+            name: 'dateEnded',
+            title: 'date Ended',
+            type: 'date'
+        }),
+        defineField({
+            name: 'isCurrentlyWorkingHere',
+            title: 'is Currently Working Here',
+            type: 'boolean'
         }),
         defineField({
             name: 'address',

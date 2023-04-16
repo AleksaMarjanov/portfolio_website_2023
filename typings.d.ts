@@ -13,6 +13,17 @@ export interface About extends Base {
     paragraph3: string,
 }
 
+export interface Experience extends Base {
+    _type: "experience",
+    position: string,
+    company: sring,
+    companyLink: url,
+    dateStarted: date,
+    dateEnded: date,
+    isCurrentlyWorkingHere: boolean,
+    address: string,
+    work: string,
+}
 interface Image {
     _type: "image";
     asset: Reference;
