@@ -16,9 +16,10 @@ export interface About extends Base {
 export interface Experience extends Base {
     _type: "experience",
     position: string,
-    company: sring,
+    company: string,
     companyLink: url,
     dateStarted: date,
+    time: string;
     dateEnded: date,
     isCurrentlyWorkingHere: boolean,
     address: string,

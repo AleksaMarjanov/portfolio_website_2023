@@ -1,15 +1,20 @@
 "use client";
 
 import { motion, useScroll } from 'framer-motion';
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import LiIcon from './LiIcon';
 import { Experience } from '@/typings';
+import { client } from '@/lib/sanity.client';
+import { groq } from 'next-sanity';
 
 type ExperienceProps = {
     experience: Experience
 }
+const query = groq`
+*[_type == "experience"]
+`
 
-const Details = ({ experience }: ExperienceProps) => {
+const Details = ({ position, companyLink, company, work, time, address }: Experience) => {
     const ref = useRef(null)
 
     return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
@@ -20,13 +25,13 @@ const Details = ({ experience }: ExperienceProps) => {
             transition={{ duration: 0.5, type: "spring" }}
         >
             <h3 className='capitlize font-bold text-2xl'>
-                {experience.position}&nbsp;<a href={experience.companyLink} target="_blank" className="text-[#F7AB0A] capitlize">@{experience.company}</a>
+                {position}&nbsp;<a href={companyLink} target="_blank" className="text-[#F7AB0A] capitlize">@{company}</a>
             </h3>
             <span className='capitlize font-medium text-dark/75'>
-                {/* {time} | {address} */}
+                {time} | {address}
             </span>
             <p className='font-medium w-full'>
-                {experience.work}
+                {work}
             </p>
         </motion.div>
     </li >
@@ -35,6 +40,7 @@ const Details = ({ experience }: ExperienceProps) => {
 
 const Experience = () => {
     const ref = useRef(null)
+    const [experiences, setExperiences] = useState([])
 
     const { scrollYProgress } = useScroll(
         // Using ref to target the div line 
@@ -43,6 +49,19 @@ const Experience = () => {
             offset: ["start end", "center start"]
         }
     )
+
+    const fetchExperiences = async () => {
+        const data = await client.fetch(query)
+        setExperiences(data);
+    }
+
+    useEffect(() => {
+        fetchExperiences()
+    }, [])
+
+
+
+    console.warn('Experinecess', { experiences })
 
     return (
         <div className='my-64'>
@@ -57,50 +76,25 @@ const Experience = () => {
                     className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top' />
 
                 <ul className='w-full flex flex-col items-start justify-between ml-4'>
-                    {/* TODO:Map through experiences */}
-                    <Details
-                    //                         position='CEO & Founder'
-                    //                         company='Marjanov Design Solutions'
-                    //                         companyLink='https://marjanovdesignsolutions.com'
-                    //                         time='January 2023 - Current'
-                    //                         address='Remote'
-                    //                         work='Utilizing cutting-edge technologies such as ReactJS, NextJS and TailwindCSS. 
-                    // Leading the company in making decisions that are focused on delivering the highest quality solutions to clients.
-                    // Responsible for overall management, growth and direction of the company. 
-                    // Accountable for making strategic decisions and leading the company to success.'
-                    />
-                    <Details
-                    //                         position='CEO & Founder'
-                    //                         company='Marjanov Design Solutions'
-                    //                         companyLink='https://marjanovdesignsolutions.com'
-                    //                         time='January 2023 - Current'
-                    //                         address='Remote'
-                    //                         work='Utilizing cutting-edge technologies such as ReactJS, NextJS and TailwindCSS. 
-                    // Leading the company in making decisions that are focused on delivering the highest quality solutions to clients.
-                    // Responsible for overall management, growth and direction of the company. 
-                    // Accountable for making strategic decisions and leading the company to success.'
-                    />
-                    <Details
-                    //                         position='CEO & Founder'
-                    //                         company='Marjanov Design Solutions'
-                    //                         companyLink='https://marjanovdesignsolutions.com'
-                    //                         time='January 2023 - Current'
-                    //                         address='Remote'
-                    //                         work='Utilizing cutting-edge technologies such as ReactJS, NextJS and TailwindCSS. 
-                    // Leading the company in making decisions that are focused on delivering the highest quality solutions to clients.
-                    // Responsible for overall management, growth and direction of the company. 
-                    // Accountable for making strategic decisions and leading the company to success.'
-                    />
-                    {/* <p className="uppercase py-5 text-gray-300 sm:text-center"> */}
-                    {/**/}
-                    {/*     {new Date(experience.dateStarted).toDateString()} = {" "} {experience.isCurrentlyWorkingHere */}
-                    {/*         ? "Present" */}
-                    {/*         : new Date(experience.dateEnded).toDateString()} */}
-                    {/* </p> */}
+                    {experiences?.map((experience: Experience) => (
+                        <div key={experience._id} >
+                            {/* TODO: Some properties are missing in types */}
+                            {/* @ts-ignore */}
+                            < Details
+                                position={experience.position}
+                                company={experience.company}
+                                companyLink={experience.companyLink}
+                                time={experience.dateStarted}
+                                address={experience.address}
+                                work={experience.work}
+                            />
+                        </div>
+                    ))}
                 </ul>
             </div>
         </div>
     )
 }
 
-export default Experience
+export default Experience;
+
