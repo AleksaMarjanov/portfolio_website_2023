@@ -14,7 +14,7 @@ const Projects = () => {
                 < Layout >
                     <AnimatedText text="Creative Portfolio" className='!text-8xl mb-16' />
 
-                    <div className="grid grid-cols-12 gap-24" >
+                    <div className="grid grid-cols-12 gap-24 gap-y-32" >
                         <div className="col-span-12">
                             <FeaturedProject type="Featured Project" title="Marjanov Design Solutions" summary="Web dev company" img={project} link="https://marjanovdesignsolutions.com" github="https://github.com/marjanovdesignsolutions" />
                         </div>

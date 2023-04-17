@@ -16,8 +16,9 @@ type Props = {
 const Project = ({ type, title, summary, img, link, github }: Props) => {
 
     return (
-        <article className='w-full flex flex-col items-center justify-center border border-solid border-dark rounded-2xl bg-light p-6 relative'>
+        <article className='w-full flex flex-col items-center justify-center border border-solid border-[#F7AB0A] rounded-2xl bg-light p-6 relative'>
 
+            <div className='absolute top-0 -right-3 -z-10 w-[101.5%] h-[103%] rounded-[2rem] rounded-br-3xl  bg-[#F7AB0A]' />
 
             <Link className='w-full ursor-pointer overflow-hidden rounded-lg ' href={link} target="_blank">
                 <Image src={img} alt={title} className="w-full h-auto" priority />

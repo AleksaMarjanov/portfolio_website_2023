@@ -17,7 +17,11 @@ const Home = () => {
                                 src={profilePic}
                                 priority
                                 alt="AleksaMarjanov"
-                                className="object-cover rounded-full" />
+                                className="object-cover rounded-full"
+                                sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                            33vw"
+                            />
                         </div>
                         <div className="lg:w-1/2 flex flex-col items-center self-center">
                             <AnimatedText text="Empowering Businesses through Innovative Software Development." className="!text-6xl !text-left" />
@@ -29,7 +33,7 @@ const Home = () => {
                                     className="flex items-center bg-[#F7AB0A] text-light p-2.5 px-65 rounded-lg text-lg font-semibold
 hover:bg-light hover:text-[#F7AB0A] border border-solid border-transparent hover:border-[#F7AB0A] transition-all border-2 duration-300 ease-in-out
                                     "
-                                    href="./AleksaMarjanovResume2023.pdf"
+                                    href=",./AleksaMarjanovResume2023.pdf"
                                     download={true}
                                     target={"_blank"}>
                                     Resume

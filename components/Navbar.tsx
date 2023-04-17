@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { Logo } from '.'
 import Link from 'next/link';
@@ -27,8 +27,17 @@ const CustomLink = ({ href, title, className }: LinkProps) => {
 }
 
 const Navbar = () => {
+    const [toggle, setToggle] = useState(false)
+
     return (
-        <header className="md:flex hidden w-full px-32 py-8 font-medium items-center justify-between">
+        <header className="flex w-full px-32 py-8 font-medium items-center justify-between">
+
+            <button className='flex flex-col items-center justify-center'>
+                <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm -translate-y-0.5'></span>
+                <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm my-0.5'></span>
+                <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm translate-y-0.5'></span>
+            </button>
+
             <nav>
                 <CustomLink href="/" title="Home" className="mr-4" />
                 <CustomLink href="/about" title="About" className="mx-4" />
