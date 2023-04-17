@@ -17,8 +17,9 @@ type Props = {
 const FeaturedProject = ({ type, title, summary, img, link, github }: Props) => {
 
     return (
-        <article className='w-full flex items-center justify-between p-12 rounded-3xl border border-solid border-dark bg-light shadow-2xl'>
+        <article className='w-full flex items-center justify-between relative p-12 rounded-3xl border border-solid border-[#F7AB0A] bg-light shadow-2xl'>
 
+            <div className='absolute top-0 -right-3 -z-10 w-[101.5%] h-[103%] rounded-[2.5rem] bg-[#F7AB0A]' />
             <Link className='w-1/2 cursor-pointer overflow-hidden rounded-lg ' href={link} target="_blank">
                 <Image src={img} alt={title} className="w-full h-auto" priority />
             </Link>
@@ -34,7 +35,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }: Props) => 
                 <p className='font-medium my-2 text-dark'>{summary}</p>
                 <div className='flex items-center mt-2 space-x-3'>
                     <Link href={github} target="_blank" className='w-10'><GithubIcon /></Link>
-                    <Link href={link} target="_blank" className='rounded-lg bg-dark text-light p-2 px-6 font-semibold'>Visit Project</Link>
+                    <Link href={link} target="_blank" className='rounded-lg bg-[#F7AB0A] hover:bg-light hover:text-[#F7AB0A] hover:border hover:border-solid hover:border-[#F7AB0A] transition-all duration-400 ease-out text-light p-2 px-6 font-semibold'>Visit Project</Link>
                 </div>
             </div>
 
