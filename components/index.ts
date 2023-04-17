@@ -9,3 +9,4 @@ export { default as Experience } from './Experience';
 export { default as LiIcon } from './LiIcon';
 export { default as Education } from './Education';
 export { default as FeaturedProject } from './FeaturedProject';
+export { default as Project } from './Project';
