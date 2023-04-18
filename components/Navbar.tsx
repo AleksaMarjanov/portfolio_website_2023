@@ -9,17 +9,27 @@ import { GithubIcon, LinkedInIcon, TwitterIcon } from './Icons';
 import { useRouter } from 'next/navigation';
 
 type LinkProps = {
+
     href: string;
     title: string;
     className: string;
 }
 
+type MobLinkProps = {
+    href: string;
+    title: string;
+    className: string;
+    toggle: boolean | (() => void)
+}
 
-const CustomMobileLink = ({ href, title, className }: LinkProps) => {
+
+const CustomMobileLink = ({ href, title, className, toggle }: MobLinkProps) => {
     const router = useRouter();
     const pathname = usePathname()
 
     const handleClick = (e: any) => {
+        // @ts-ignore
+        toggle()
         e.preventDefault();
         router.push(href);
     }
@@ -27,9 +37,9 @@ const CustomMobileLink = ({ href, title, className }: LinkProps) => {
     return (
         // @ts-ignore
         < button href={href} className={`${className} relative group`
-        } onClick={() => router.push(href)} >
+        } onClick={handleClick} >
             {title}
-            < span className={`h-[1px] inline-block  bg-dark absolute left-0 bottom-0 -bottom-0.5
+            < span className={`h-[1px] inline-block  bg-light absolute left-0 bottom-0 -bottom-0.5
                 group-hover:w-full transition-[width] ease duration-300
                 ${pathname === href ? 'w-full' : 'w-0'}`}>&nbsp;</span >
 
@@ -102,14 +112,14 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu */}
-            {toggle &&
+            {toggle ?
                 <div className="min-w-[70vw] flex flex-col fixed z-[30] justify-between items-center h-[60vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
 bg-dark/90 text-light dark:bg-light/75 dark:text-dark rounded-sm backdrop-blur-md py-32">
                     <nav className="flex items-center justify-start flex-col">
-                        <CustomMobileLink href="/" title="Home" className="" />
-                        <CustomMobileLink href="/about" title="About" className="" />
-                        <CustomMobileLink href="/projects" title="Projects" className="" />
-                        <CustomMobileLink href="/contact" title="Contact" className="" />
+                        <CustomMobileLink href="/" title="Home" className="" toggle={handleToggle} />
+                        <CustomMobileLink href="/about" title="About" className="" toggle={handleToggle} />
+                        <CustomMobileLink href="/projects" title="Projects" className="" toggle={handleToggle} />
+                        <CustomMobileLink href="/contact" title="Contact" className="" toggle={handleToggle} />
                     </nav>
                     <nav className="flex items-center justify-center flex-wrap">
                         <motion.a
@@ -134,6 +144,7 @@ bg-dark/90 text-light dark:bg-light/75 dark:text-dark rounded-sm backdrop-blur-m
                         </motion.a>
                     </nav>
                 </div>
+                : ""
             }
 
 
