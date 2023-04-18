@@ -29,43 +29,87 @@ const CustomLink = ({ href, title, className }: LinkProps) => {
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
 
-    return (
-        <header className="flex w-full px-32 py-8 font-medium items-center justify-between">
+    // trigger hamburger menu
+    const handleToggle = () => {
+        setToggle(!toggle);
+    }
 
-            <button className='flex flex-col items-center justify-center'>
-                <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm -translate-y-0.5'></span>
-                <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm my-0.5'></span>
-                <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm translate-y-0.5'></span>
+    return (
+        <header className="flex w-full px-32 py-8 font-medium items-center justify-between relative">
+
+            {/* Hamburger menu */}
+            <button className='flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
+                <span className={`bg-dark dark:bg-light block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${toggle ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`bg-dark dark:bg-light block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${toggle ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`bg-dark dark:bg-light block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${toggle ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </button>
 
-            <nav>
-                <CustomLink href="/" title="Home" className="mr-4" />
-                <CustomLink href="/about" title="About" className="mx-4" />
-                <CustomLink href="/projects" title="Projects" className="mx-4" />
-                <CustomLink href="/contact" title="Contact" className="ml-4" />
-            </nav>
-            <nav className="flex items-center justify-center flex-wrap">
-                <motion.a
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-6 mr-3"
-                    href="https://twitter.com/Beli1337" target={"_blank"}>
-                    <TwitterIcon />
-                </motion.a>
-                <motion.a
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-6 mr-3"
-                    href="https://github.com/AleksaMarjanov" target={"_blank"}>
-                    <GithubIcon />
-                </motion.a>
-                <motion.a
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    href="https://linkedin.com/in/AleksaMarjanov" target={"_blank"}>
-                    <LinkedInIcon />
-                </motion.a>
-            </nav>
+            <div className="w-full flex justify-between items-center hidden lg:flex ">
+                <nav>
+                    <CustomLink href="/" title="Home" className="mr-4" />
+                    <CustomLink href="/about" title="About" className="mx-4" />
+                    <CustomLink href="/projects" title="Projects" className="mx-4" />
+                    <CustomLink href="/contact" title="Contact" className="ml-4" />
+                </nav>
+                <nav className="flex items-center justify-center flex-wrap">
+                    <motion.a
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="w-6 mr-3"
+                        href="https://twitter.com/Beli1337" target={"_blank"}>
+                        <TwitterIcon />
+                    </motion.a>
+                    <motion.a
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="w-6 mr-3"
+                        href="https://github.com/AleksaMarjanov" target={"_blank"}>
+                        <GithubIcon />
+                    </motion.a>
+                    <motion.a
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        href="https://linkedin.com/in/AleksaMarjanov" target={"_blank"}>
+                        <LinkedInIcon />
+                    </motion.a>
+                </nav>
+            </div>
+
+            {/* Mobile menu */}
+            {toggle &&
+                <div className="min-w-[70vw] flex flex-col fixed z-[30] justify-between items-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+bg-dark/90 text-light dark:bg-light/75 dark:text-dark rounded-sm backdrop-blur-md py-32">
+                    <nav>
+                        <CustomLink href="/" title="Home" className="mr-4" />
+                        <CustomLink href="/about" title="About" className="mx-4" />
+                        <CustomLink href="/projects" title="Projects" className="mx-4" />
+                        <CustomLink href="/contact" title="Contact" className="ml-4" />
+                    </nav>
+                    <nav className="flex items-center justify-center flex-wrap">
+                        <motion.a
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="w-6 mr-3"
+                            href="https://twitter.com/Beli1337" target={"_blank"}>
+                            <TwitterIcon />
+                        </motion.a>
+                        <motion.a
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="w-6 mr-3"
+                            href="https://github.com/AleksaMarjanov" target={"_blank"}>
+                            <GithubIcon />
+                        </motion.a>
+                        <motion.a
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.9 }}
+                            href="https://linkedin.com/in/AleksaMarjanov" target={"_blank"}>
+                            <LinkedInIcon />
+                        </motion.a>
+                    </nav>
+                </div>
+            }
+
 
             <div className="absolute left-[50%] top-2 translate-x-[-50%]">
                 <Logo />
