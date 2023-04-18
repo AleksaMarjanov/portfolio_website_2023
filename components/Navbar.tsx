@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState } from 'react'
+import React, { MouseEventHandler, useState } from 'react'
 import { motion } from 'framer-motion';
 import { Logo } from '.'
 import Link from 'next/link';
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { GithubIcon, LinkedInIcon, TwitterIcon } from './Icons';
+import { useRouter } from 'next/navigation';
 
 type LinkProps = {
     href: string;
@@ -13,15 +14,40 @@ type LinkProps = {
     className: string;
 }
 
-const CustomLink = ({ href, title, className }: LinkProps) => {
+
+const CustomMobileLink = ({ href, title, className }: LinkProps) => {
+    const router = useRouter();
     const pathname = usePathname()
 
+    const handleClick = (e: any) => {
+        e.preventDefault();
+        router.push(href);
+    }
+
     return (
-        <Link href={href} className={`${className} relative group`} >
+        // @ts-ignore
+        < button href={href} className={`${className} relative group`
+        } onClick={() => router.push(href)} >
             {title}
             < span className={`h-[1px] inline-block  bg-dark absolute left-0 bottom-0 -bottom-0.5
                 group-hover:w-full transition-[width] ease duration-300
-                ${pathname === href ? 'w-full' : 'w-0'}`}>&nbsp;</span>
+                ${pathname === href ? 'w-full' : 'w-0'}`}>&nbsp;</span >
+
+        </button >
+    )
+}
+
+
+const CustomLink = ({ href, title, className }: LinkProps) => {
+    const pathname = usePathname()
+
+
+    return (
+        <Link href={href} className={`${className} relative group`}  >
+            {title}
+            < span className={`h-[1px] inline-block  bg-dark absolute left-0 bottom-0 -bottom-0.5
+                group-hover:w-full transition-[width] ease duration-300
+                ${pathname === href ? 'w-full' : 'w-0'}`}>&nbsp;</span >
         </Link >
     )
 }
@@ -35,7 +61,7 @@ const Navbar = () => {
     }
 
     return (
-        <header className="flex w-full px-32 py-8 font-medium items-center justify-between relative">
+        <header className="bg-light flex w-full px-6 md:px-16 lg:px-32 py-8 font-medium items-center justify-between relative">
 
             {/* Hamburger menu */}
             <button className='flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
@@ -77,13 +103,13 @@ const Navbar = () => {
 
             {/* Mobile menu */}
             {toggle &&
-                <div className="min-w-[70vw] flex flex-col fixed z-[30] justify-between items-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+                <div className="min-w-[70vw] flex flex-col fixed z-[30] justify-between items-center h-[60vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
 bg-dark/90 text-light dark:bg-light/75 dark:text-dark rounded-sm backdrop-blur-md py-32">
-                    <nav>
-                        <CustomLink href="/" title="Home" className="mr-4" />
-                        <CustomLink href="/about" title="About" className="mx-4" />
-                        <CustomLink href="/projects" title="Projects" className="mx-4" />
-                        <CustomLink href="/contact" title="Contact" className="ml-4" />
+                    <nav className="flex items-center justify-start flex-col">
+                        <CustomMobileLink href="/" title="Home" className="" />
+                        <CustomMobileLink href="/about" title="About" className="" />
+                        <CustomMobileLink href="/projects" title="Projects" className="" />
+                        <CustomMobileLink href="/contact" title="Contact" className="" />
                     </nav>
                     <nav className="flex items-center justify-center flex-wrap">
                         <motion.a
@@ -111,7 +137,7 @@ bg-dark/90 text-light dark:bg-light/75 dark:text-dark rounded-sm backdrop-blur-m
             }
 
 
-            <div className="absolute left-[50%] top-2 translate-x-[-50%]">
+            <div className="absolute left-[50%] top-2 translate-x-[-50%] hidden lg:block">
                 <Logo />
             </div>
         </header >
