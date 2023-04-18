@@ -8,6 +8,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { GithubIcon, LinkedInIcon, TwitterIcon } from './Icons';
 import { useRouter } from 'next/navigation';
 
+//TODO: FIX ALL TYPES/TS-IGNORES
+
 type LinkProps = {
 
     href: string;
@@ -27,10 +29,9 @@ const CustomMobileLink = ({ href, title, className, toggle }: MobLinkProps) => {
     const router = useRouter();
     const pathname = usePathname()
 
-    const handleClick = (e: any) => {
+    const handleClick = () => {
         // @ts-ignore
         toggle()
-        e.preventDefault();
         router.push(href);
     }
 
