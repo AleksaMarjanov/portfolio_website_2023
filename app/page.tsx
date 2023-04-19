@@ -9,10 +9,10 @@ const Home = () => {
 
     return (
         <main className="bg-light flex items-center text-dark w-full min-h-[80vh] md:min-h-screen">
-            <div className="pt-0">
+            <div className="pt-16 pt-8 md:pt-0 mb-16">
                 <Layout >
                     <div className='flex flex-col lg:flex-row items-center justify-between w-full'>
-                        <div className="w-full h-auto lg:w-1/2 flex items-center justify-center">
+                        <div className="w-full h-auto lg:w-1/2">
                             <Image
                                 src={profilePic}
                                 priority
