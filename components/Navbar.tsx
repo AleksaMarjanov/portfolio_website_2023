@@ -72,8 +72,7 @@ const Navbar = () => {
     }
 
     return (
-        <header className="bg-light flex w-full px-6 md:px-16 lg:px-32 py-8 font-medium items-center justify-between relative">
-
+        <header className="bg-light flex w-full px-6 sm:px-12 md:px-16 lg:px-32 py-8 font-medium items-center justify-between relative z-10">
             {/* Hamburger menu */}
             <button className='flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
                 <span className={`bg-dark dark:bg-light block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${toggle ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
