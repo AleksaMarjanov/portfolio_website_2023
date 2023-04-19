@@ -25,7 +25,7 @@ type MobLinkProps = {
 }
 
 
-const CustomMobileLink = ({ href, title, className, toggle }: MobLinkProps) => {
+const CustomMobileLink = ({ href, title, toggle, className }: MobLinkProps) => {
     const router = useRouter();
     const pathname = usePathname()
 
@@ -37,7 +37,7 @@ const CustomMobileLink = ({ href, title, className, toggle }: MobLinkProps) => {
 
     return (
         // @ts-ignore
-        < button href={href} className={`${className} relative group`
+        < button href={href} className={`${className} relative group my-2`
         } onClick={handleClick} >
             {title}
             < span className={`h-[1px] inline-block  bg-light absolute left-0 bottom-0 -bottom-0.5
@@ -88,24 +88,25 @@ const Navbar = () => {
                     <CustomLink href="/projects" title="Projects" className="mx-4" />
                     <CustomLink href="/contact" title="Contact" className="ml-4" />
                 </nav>
-                <nav className="flex items-center justify-center flex-wrap">
+                <nav className="flex items-center justify-center flex-wrap mt-2">
                     <motion.a
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-6 mr-3"
+                        className="w-6 mr-3 mx-1 "
                         href="https://twitter.com/Beli1337" target={"_blank"}>
                         <TwitterIcon />
                     </motion.a>
                     <motion.a
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-6 mr-3"
+                        className="w-6 mr-3 bg-light rounded-full dark:bg-light mx-1 "
                         href="https://github.com/AleksaMarjanov" target={"_blank"}>
                         <GithubIcon />
                     </motion.a>
                     <motion.a
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
+                        className="w-6 mr-3 mx-1 "
                         href="https://linkedin.com/in/AleksaMarjanov" target={"_blank"}>
                         <LinkedInIcon />
                     </motion.a>
@@ -114,7 +115,10 @@ const Navbar = () => {
 
             {/* Mobile menu */}
             {toggle ?
-                <div className="min-w-[70vw] flex flex-col fixed z-[30] justify-between items-center h-[60vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+                <motion.div
+                    initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    className="min-w-[70vw] flex flex-col fixed z-[30] justify-between items-center h-[60vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
 bg-dark/90 text-light dark:bg-light/75 dark:text-dark rounded-sm backdrop-blur-md py-32">
                     <nav className="flex items-center justify-start flex-col">
                         <CustomMobileLink href="/" title="Home" className="" toggle={handleToggle} />
@@ -126,26 +130,27 @@ bg-dark/90 text-light dark:bg-light/75 dark:text-dark rounded-sm backdrop-blur-m
                         <motion.a
                             whileHover={{ y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                            className="w-6 mr-3"
+                            className="w-6 mr-3 mx-1 "
                             href="https://twitter.com/Beli1337" target={"_blank"}>
                             <TwitterIcon />
                         </motion.a>
                         <motion.a
                             whileHover={{ y: -2 }}
                             whileTap={{ scale: 0.9 }}
-                            className="w-6 mr-3"
+                            className="w-6 mr-3 mx-1 "
                             href="https://github.com/AleksaMarjanov" target={"_blank"}>
                             <GithubIcon />
                         </motion.a>
                         <motion.a
                             whileHover={{ y: -2 }}
                             whileTap={{ scale: 0.9 }}
+                            className="w-6 mr-3 mx-1 "
                             href="https://linkedin.com/in/AleksaMarjanov" target={"_blank"}>
                             <LinkedInIcon />
                         </motion.a>
                     </nav>
-                </div>
-                : ""
+                </motion.div>
+                : null
             }
 
 

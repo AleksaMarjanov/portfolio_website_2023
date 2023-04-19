@@ -101,15 +101,9 @@ const AboutComponent = () => {
 
                             <div className='md:max-w-[300px] col-span-2 relative items-center justify-center object-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light p-8'>
                                 <div className='absolute top-0 -right-3 -z-10 w-[105%] h-[103%] rounded-[2rem] bg-[#F7AB0A]' />
-                                <Image
-                                    src={profilePic}
-                                    alt="AleksaMarjanov"
-                                    className='w-full h-auto rounded-2xl'
-                                    priority
-                                    sizes="(max-width: 768px) 100vw,
+                                <Image src={profilePic} alt="AleksaMarjanov" className='w-full h-auto rounded-2xl' priority sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw"
-                                />
+              33vw" />
                             </div>
 
                             <div className='col-span-3 flex flex-col items-center justify-between'>
