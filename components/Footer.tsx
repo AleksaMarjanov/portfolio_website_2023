@@ -4,7 +4,7 @@ import Layout from './Layout'
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-light border-t-2 border-solid border-[#F7AB0A] font-medium px-6 md:px-16 text-md md:text-lg ">
+        <footer className="w-full bg-light border-t-2 border-solid border-[#F7AB0A] font-medium px-6 md:px-16 text-xs sm:text-sm  md:text-lg ">
 
             <div className='w-full h-full inline-block z-0 bg-light md:p-32 py-8 flex items-center justify-between'>
                 <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
@@ -16,7 +16,7 @@ const Footer = () => {
                         target={"_blank"}>Aleksa Marjanov</Link>
                 </div>
                 <div className="flex items-center">
-                    Hire <span className="text-pink-500 text-2xl px-1 ">&#9825;</span>
+                    Hire <span className="text-pink-500 text-xs sm:text-sm  md:text-2xl px-1 ">&#9825;</span>
                     <Link
                         className="underline underline-offset-2 hover:text-[#F7AB0A] hover:animate-pulse duration-300 "
                         href="https://marjanovdesignsolutions.com"
