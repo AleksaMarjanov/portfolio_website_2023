@@ -25,12 +25,12 @@ const Home = () => {
                         </div>
                         <div className="w-full lg:w-1/2 flex flex-col items-center self-center lg:self-start">
                             <AnimatedText text="Empowering Businesses through Innovative Software Development." className="text-3xl lg:text-6xl !text-left" />
-                            <span className="font-medium text-base text-xs sm:text-sm md:text-lg my-4"><b>Exper</b>ienced <b>fro</b>nt-end <b>deve</b>loper,
+                            <span className="font-medium text-base text-sm md:text-lg my-4"><b>Exper</b>ienced <b>fro</b>nt-end <b>deve</b>loper,
                                 <b> brin</b>ging <b>yo</b>ur
                                 <b> digi</b>tal <b>dre</b>ams <b>to</b> <b>li</b>fe <b>wi</b>th <b>visi</b>onary <b>fro</b>nt-end <b>deve</b>lopment.</span>
                             <div className='flex items-center self-center lg:self-start mt-2 gap-2 md:gap-4 '>
                                 <Link
-                                    className="flex items-center bg-[#F7AB0A] text-light md:p-2 px-4 text-xs sm:text-sm md:px-6  rounded-lg md:text-lg font-semibold
+                                    className="flex items-center bg-[#F7AB0A] text-light md:p-2 py-2 px-4 sm:text-sm md:px-6  rounded-lg md:text-lg font-semibold
 hover:bg-light hover:text-[#F7AB0A] border border-solid border-transparent hover:border-[#F7AB0A] transition-all border-2 duration-300 ease-in-out
                                     "
                                     href=",./AleksaMarjanovResume2023.pdf"
@@ -40,7 +40,7 @@ hover:bg-light hover:text-[#F7AB0A] border border-solid border-transparent hover
                                     <LinkArrow className={"w-6 ml-1"} />
                                 </Link>
                                 <Link
-                                    className="ml-4 text-xs sm:text-sm md:text-lg font-medium capitilize text-underline"
+                                    className="ml-4 sm:text-sm md:text-lg font-medium capitilize text-underline"
                                     href="mailto:aleksa.marjanov@outlook.com">Contact</Link>
                             </div>
                         </div>
