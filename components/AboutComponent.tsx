@@ -63,7 +63,7 @@ const AboutComponent = () => {
 
     return (
         <>
-            <main className="bg-light w-full flex flex-col items-center justify-center">
+            <main className=" z-0 w-full flex flex-col items-center justify-center">
                 <div className="pt-16">
                     <Layout>
                         <AnimatedText text="Meet the Passionate Problem Solver Behind the Code" className="mb-8 md:mb-16 !text-4xl md:!text-6xl !text-center" />
@@ -100,10 +100,10 @@ const AboutComponent = () => {
                                 ))}
                             </div>
                             {/* max-w-[540px] md:max-w-[300px] */}
-                            <div className='md:max-w-[400px] col-span-8  md:col-span-4 lg:col-span-3 relative 
-                                items-center justify-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light p-8 order-1 lg:order-2'>
+                            <div className='md:max-w-[400px] col-span-8 md:col-span-4 lg:col-span-3 relative 
+                                items-center justify-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light  p-8 order-1 lg:order-2'>
 
-                                <div className='absolute top-0 -right-3 -z-10 w-[105%] h-[103%] rounded-[2.5rem] rounded-br-3xl  bg-[#F7AB0A]' />
+                                <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2.5rem] rounded-br-3xl  dark-bg-light bg-[#F7AB0A]' />
 
                                 {/* <div className='absolute top-0 -right-3 -z-10 w-[105%] h-[103%] rounded-[2rem] bg-[#F7AB0A] dark:bg-light' /> */}
                                 <Image src={profilePic}
