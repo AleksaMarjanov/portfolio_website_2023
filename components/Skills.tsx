@@ -37,14 +37,15 @@ const Skill = ({ x, y, src }: SkillProps) => {
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
-            className='flex items-center justify-center rounded-full bg-dark/50 font-semibold py-3 px-6 shadow-dark cursor-pointer absolute '
+            className='flex items-center justify-center rounded-full bg-transparent lg:bg-dark/50
+            font-semibold lg:py-3 py-1.5 px-3 md:py-2 md:px-4  shadow-dark cursor-pointer absolute '
             initial={{ x: 0, y: 0 }}
             whileInView={{ x: x, y: y }}
             viewport={{ once: true }}
             transition={{ duration: 1.5 }}
         >
             {/* {name} */}
-            < Image src={src} width={16} height={16} alt="skills" priority className="w-16  h-16 object-center object-contai " />
+            < Image src={src} width={16} height={16} alt="skills" priority className="w-8 h-8 md:w-12 md:h-12 lg:w-16  lg:h-16 object-center object-contai " />
         </motion.div >
     )
 }
@@ -52,12 +53,13 @@ const Skill = ({ x, y, src }: SkillProps) => {
 const Skills = () => {
     return (
         <>
-            <h2 className="font-bold text-8xl mt-64 w-full text-center">Skills</h2>
+            <h2 className="font-bold text-6xl md:text-8xl mt-32 md:mt-64 w-full text-center">Skills</h2>
             <div className='w-full h-screen relative flex items-center justify-center 
-            rounded-full bg-circularLight'>
+            rounded-full bg-circularLightSm  lg:bg-circularLight max-[375px]:h-[50vh] max-[475px]:h-[60vh] '>
                 <motion.div
                     // whileHover={{ scale: 1.05 }}
-                    className='flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark cursor-pointer'>
+                    className='flex items-center justify-center rounded-full font-semibold bg-dark p-4 text-xs sm:text-sm lg:px-6 text-light 
+                   lg: p-8 shadow-dark cursor-pointer'>
                     Web
                 </motion.div>
 
@@ -72,7 +74,7 @@ const Skills = () => {
                 <Skill src={jQuery} x="0vw" y="-20vw" />
                 <Skill src={Git} x="-25w" y="18vw" />
                 <Skill src={Neovim} x="22vw" y="-20vw" />
-                <Skill src={Markdown} x="2vw" y="-12vw" />
+                {/* <Skill src={Markdown} x="2vw" y="-12vw" /> */}
                 <Skill src={Postman} x="32vw" y="-5vw" />
                 <Skill src={Firebase} x="6vw" y="-3vw" />
                 <Skill src={Linux} x="13vw" y="-8vw" />

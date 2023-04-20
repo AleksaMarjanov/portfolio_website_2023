@@ -102,7 +102,10 @@ const AboutComponent = () => {
                             {/* max-w-[540px] md:max-w-[300px] */}
                             <div className='col-span-8 md:col-span-4 lg:col-span-3 relative 
                                 items-center justify-center h-max rounded-2xl border-2 border-solid border-[#F7AB0A] bg-light p-8 order-1 md:order-2'>
-                                <div className='absolute top-0 -right-3 -z-10 w-[105%] h-[103%] rounded-[2rem] bg-[#F7AB0A] dark:bg-light' />
+
+                                <div className='absolute top-0 -right-3 -z-10 w-[100.5%] h-[103%] rounded-[2.5rem] rounded-br-3xl  bg-[#F7AB0A]' />
+
+                                {/* <div className='absolute top-0 -right-3 -z-10 w-[105%] h-[103%] rounded-[2rem] bg-[#F7AB0A] dark:bg-light' /> */}
                                 <Image src={profilePic}
                                     alt="AleksaMarjanov"
                                     className='w-full h-auto rounded-2xl'
@@ -138,7 +141,7 @@ const AboutComponent = () => {
                             </div>
                         </div>
 
-                        {/* <Skills /> */}
+                        <Skills />
                         {/* <Experience /> */}
                         {/* <Education /> */}
                     </Layout>
