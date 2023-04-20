@@ -17,20 +17,20 @@ const query = groq`
 const Details = ({ position, companyLink, company, work, time, address }: Experience) => {
     const ref = useRef(null)
 
-    return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+    return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[80%] md:w-[60%] mx-auto flex flex-col items-center justify-between'>
         <LiIcon reference={ref} />
         <motion.div
             initial={{ y: 50 }}
             whileInView={{ y: 0 }}
             transition={{ duration: 0.5, type: "spring" }}
         >
-            <h3 className='capitlize font-bold text-2xl'>
+            <h3 className='capitlize font-bold text-lg sm:text-xl md:text-2xl'>
                 {position}&nbsp;<a href={companyLink} target="_blank" className="text-[#F7AB0A] capitlize">@{company}</a>
             </h3>
-            <span className='capitlize font-medium text-dark/75'>
+            <span className='capitlize font-medium text-dark/75 text-xs md:text-lg'>
                 {time} | {address}
             </span>
-            <p className='font-medium w-full'>
+            <p className='font-medium w-full text-sm md:text-lg'>
                 {work}
             </p>
         </motion.div>
@@ -65,17 +65,17 @@ const Experience = () => {
 
     return (
         <div className='my-64'>
-            <h2 className='mb-32 w-full text-center font-semibold text-8xl'>
+            <h2 className='md:mb-32 w-full text-center font-semibold text-4xl sm:text-6xl mb-16 md:text-8xl'>
                 Experience
             </h2>
 
-            <div ref={ref} className='w-[75%] m-auto relative'>
+            <div ref={ref} className='w-full sm:w-[90%] md:w-[75%] m-auto relative'>
                 {/* Line that will animate with framer-motion -- scrollYProgress */}
                 <motion.div
                     style={{ scaleY: scrollYProgress }}
-                    className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top' />
+                    className='absolute sm:left-[30px] left-[20px] w-[2px] md:left-9 md:top-0 md:w-[4px] h-full bg-dark origin-top' />
 
-                <ul className='w-full flex flex-col items-start justify-between ml-4'>
+                <ul className='w-full flex flex-col items-start justify-between ml-2 md:ml-4'>
                     {experiences?.map((experience: Experience) => (
                         <div key={experience._id} >
                             {/* TODO: Some properties are missing in types */}

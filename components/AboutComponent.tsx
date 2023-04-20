@@ -142,8 +142,8 @@ const AboutComponent = () => {
                         </div>
 
                         <Skills />
-                        {/* <Experience /> */}
-                        {/* <Education /> */}
+                        <Experience />
+                        <Education />
                     </Layout>
                 </div >
             </main >
