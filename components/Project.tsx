@@ -1,7 +1,11 @@
+"use client";
+
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GithubIcon } from './Icons';
 import Image, { StaticImageData } from 'next/image';
+import { groq } from 'next-sanity';
+import { client } from '@/lib/sanity.client';
 
 
 type Props = {
@@ -14,6 +18,24 @@ type Props = {
 
 }
 const Project = ({ type, title, summary, img, link, github }: Props) => {
+    const [projects, setProjects] = useState([])
+
+    const query = groq`
+*[_type == 'project']
+`
+
+    const fetchProjects = async () => {
+        const data = await client.fetch(query);
+        setProjects(data);
+    }
+
+
+    useEffect(() => {
+        fetchProjects();
+    }, [])
+
+    console.log('Projects', { projects });
+
 
     return (
         <article className='w-full flex flex-col items-center justify-center border border-solid border-[#F7AB0A] rounded-2xl bg-light p-6 relative'>
@@ -43,3 +65,4 @@ const Project = ({ type, title, summary, img, link, github }: Props) => {
     )
 }
 export default Project;
+
