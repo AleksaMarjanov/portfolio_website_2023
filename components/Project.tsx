@@ -15,8 +15,9 @@ type Props = {
     link: string;
     github: string;
     img: string | StaticImageData
-
 }
+
+
 const Project = ({ type, title, summary, img, link, github }: Props) => {
     const [projects, setProjects] = useState([])
 
