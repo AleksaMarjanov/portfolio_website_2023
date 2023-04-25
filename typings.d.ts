@@ -25,7 +25,7 @@ export interface Experience extends Base {
     address: string,
     work: string,
 }
-export interface Project extends Base {
+export interface Projects extends Base {
     _type: "project",
     github: url,
     image: Image,

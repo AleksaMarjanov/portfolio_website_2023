@@ -1,19 +1,27 @@
-import { AnimatedText, FeaturedProject, Layout } from '@/components'
+import { AnimatedText, FeaturedProject, Layout, Project } from '@/components'
 import React from 'react'
 import project from '../../public/marjanov.png'
-import { Project } from '@/typings'
+import { Projects } from '@/typings'
+import { groq } from 'next-sanity'
+import { client } from '@/lib/sanity.client'
+import { urlFor } from '@/lib/urlFor'
 
 export const metadata = {
     title: 'Projects Page'
 }
 
-type ProjectType = {
-    project: Project[]
-}
+// type ProjectType = {
+//     project: Project[]
+// }
 
-const Projects = async ({ project }: ProjectType) => {
+const query = groq`
+*[_type == 'project']
+`
+
+const Projects = async () => {
 
 
+    const projects = await client.fetch(query)
 
     return (
         <main className="w-full p-2 md:p-0 mb-16 flex flex-col items-center justify-center">
@@ -25,10 +33,18 @@ const Projects = async ({ project }: ProjectType) => {
                     <div className="col-span-12">
                         {/* <FeaturedProject type="Featured Project" title="Marjanov Design Solutions" summary="Web dev company" img={project} link="https://marjanovdesignsolutions.com" github="https://github.com/marjanovdesignsolutions" /> */}
                     </div>
-                    <div className="col-span-12 lg:col-span-6">
-
-                        {/* <Project type="Project" title="Marjanov Design Solutions" summary="Web dev company" img={project} link="https://marjanovdesignsolutions.com" github="https://github.com/marjanovdesignsolutions" /> */}
-                    </div>
+                    {projects?.map((project: Projects) => (
+                        <div key={project._id} className="col-span-12 lg:col-span-6">
+                            <Project
+                                type={project.type}
+                                img={urlFor(project.image).url()}
+                                title={project.title}
+                                summary={project.summary}
+                                link={project.link}
+                                github={project.github} />
+                        </div>
+                    ))}
+                    {/* <Project type="Project" title="Marjanov Design Solutions" summary="Web dev company" img={project} link="https://marjanovdesignsolutions.com" github="https://github.com/marjanovdesignsolutions" /> */}
                 </div>
             </Layout >
             {/* </div > */}

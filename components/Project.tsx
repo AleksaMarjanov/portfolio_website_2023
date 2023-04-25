@@ -44,7 +44,7 @@ const Project = ({ type, title, summary, img, link, github }: Props) => {
             <div className='absolute top-0 -right-3 -z-10 w-[101.5%] h-[103%] rounded-[2rem] rounded-br-3xl  bg-[#F7AB0A]' />
 
             <Link className='w-full ursor-pointer overflow-hidden rounded-lg ' href={link} target="_blank">
-                <Image src={img} alt={title} className="w-full h-auto" priority />
+                <Image src={img} alt={title} width={500} height={500} className="w-full h-auto" priority />
             </Link>
 
 

@@ -3,6 +3,13 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
+    images: {
+        domains: [
+            'www.instagram.com',
+            'www.facebook.com',
+            'cdn.sanity.io',
+        ]
+    },
     env: {
         projectId: process.env.NEXT_APP_SANITY_PROJECT_ID,
         apiVersion: process.env.NEXT_APP_SANITY_API_VERSION,
