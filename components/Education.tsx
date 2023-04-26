@@ -15,7 +15,7 @@ type DetailsProps = {
 const Details = ({ type, time, place, info }: DetailsProps) => {
     const ref = useRef(null)
 
-    return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[80%] md:w-[60%] mx-auto flex flex-col items-center justify-between'>
+    return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[80%] md:w-[60%] mx-auto flex flex-col items-start justify-start'>
         <LiIcon reference={ref} />
         <motion.div
             initial={{ y: 50 }}
@@ -59,7 +59,7 @@ const Education = () => {
                     style={{ scaleY: scrollYProgress }}
                     className='absolute sm:left-[30px] left-[20px] w-[2px] md:left-9 md:top-0 md:w-[4px] h-full bg-dark origin-top' />
 
-                <ul className='w-full flex flex-col items-start justify-between ml-2 md:ml-4'>
+                <ul className='w-full flex flex-col items-start justify-start ml-2 md:ml-4'>
                     <Details
                         type="Certificate"
                         time="2022-2022"

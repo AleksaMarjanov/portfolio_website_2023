@@ -38,7 +38,7 @@ const Skill = ({ x, y, src }: SkillProps) => {
         <motion.div
             whileHover={{ scale: 1.05 }}
             className='flex items-center justify-center rounded-full bg-transparent lg:bg-dark/50
-            font-semibold lg:py-3 py-1.5 px-3 md:py-2 md:px-4  shadow-dark cursor-pointer absolute '
+            font-semibold lg:py-3 py-1.5 px-3 md:py-2 md:px-4  bg-dark shadow-dark cursor-pointer absolute '
             initial={{ x: 0, y: 0 }}
             whileInView={{ x: x, y: y }}
             viewport={{ once: true }}
@@ -63,26 +63,20 @@ const Skills = () => {
                     Web
                 </motion.div>
 
-                <Skill src={ReactPic} x="-5vw" y="-10vw" />
-                <Skill src={Next} x="-8vw" y="-4vw" />
-                <Skill src={CSS} x="-24vw" y="6vw" />
-                <Skill src={Tailwind} x="0vw" y="12vw" />
-                <Skill src={Javascript} x="-20vw" y="2vw" />
-                <Skill src={Redux} x="-20vw" y="-15vw" />
-                <Skill src={TypeScript} x="-15vw" y="8vw" />
-                <Skill src={HTML} x="12vw" y="4vw" />
-                <Skill src={jQuery} x="0vw" y="-20vw" />
-                <Skill src={Git} x="-25w" y="18vw" />
-                <Skill src={Neovim} x="22vw" y="-20vw" />
-                {/* <Skill src={Markdown} x="2vw" y="-12vw" /> */}
-                <Skill src={Postman} x="32vw" y="-5vw" />
-                <Skill src={Firebase} x="6vw" y="-3vw" />
-                <Skill src={Linux} x="13vw" y="-8vw" />
-                <Skill src={Jest} x="-24vw" y="18vw" />
-                <Skill src={Vim} x="4vw" y="4vw" />
-                <Skill src={Vscode} x="12vw" y="13vw" />
-                <Skill src={Vercel} x="32vw" y="-10vw" />
-                <Skill src={MongoDB} x="18vw" y="9vw" />
+                <Skill src={ReactPic} x="0vw" y="-16vw" />
+                <Skill src={Next} x="-12vw" y="-13vw" />
+                {/* <Skill src={CSS} x="-24vw" y="6vw" /> */}
+                <Skill src={Tailwind} x="0vw" y="16vw" />
+                <Skill src={Javascript} x="-18vw" y="3vw" />
+                <Skill src={Redux} x="-16vw" y="-22vw" />
+                <Skill src={TypeScript} x="-24vw" y="-8vw" />
+                <Skill src={HTML} x="12vw" y="16vw" />
+                <Skill src={Git} x="-24w" y="28vw" />
+                <Skill src={Linux} x="22vw" y="-6vw" />
+                <Skill src={Neovim} x="14vw" y="-16vw" />
+                <Skill src={jQuery} x="-18vw" y="16vw" />
+                <Skill src={Vscode} x="22vw" y="22vw" />
+                <Skill src={MongoDB} x="18vw" y="3vw" />
             </div >
         </>
     )
