@@ -17,9 +17,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <html lang="en">
             <body className={`${montserrat.className} bg-light w-full min-h-screen `} >
                 <Navbar />
-                <LayoutAnimatePresence>
-                    {children}
-                </LayoutAnimatePresence>
+                {children}
                 <Footer />
             </body>
         </html >
