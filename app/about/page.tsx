@@ -1,4 +1,4 @@
-import { AboutComponent, Skills } from '@/components'
+import { AboutComponent, Skills, TransitionEffect } from '@/components'
 import React from 'react'
 
 export const metadata = {
@@ -10,6 +10,7 @@ const About = () => {
     return (
 
         <main>
+            <TransitionEffect />
             <AboutComponent />
         </main>
     )

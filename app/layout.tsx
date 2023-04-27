@@ -1,6 +1,9 @@
+"use client";
+
 import { Footer, Navbar } from '@/components';
 import './globals.css'
 import { Montserrat } from 'next/font/google'
+import { AnimatePresence } from 'framer-motion';
 
 const montserrat = Montserrat({
     weight: ["400", "700"],
@@ -8,10 +11,10 @@ const montserrat = Montserrat({
     variable: "--font-montserrat",
 });
 
-export const metadata = {
-    title: 'Software Developer - Aleksa Marjanov',
-    description: 'Web Developer | Software Developer, create unique designs',
-}
+// export const metadata = {
+//     title: 'Software Developer - Aleksa Marjanov',
+//     description: 'Web Developer | Software Developer, create unique designs',
+// }
 
 export default function RootLayout({
     children,
@@ -22,7 +25,9 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${montserrat.className} bg-light w-full min-h-screen `} >
                 <Navbar />
-                {children}
+                <AnimatePresence>
+                    {children}
+                </AnimatePresence>
                 <Footer />
             </body>
         </html>
