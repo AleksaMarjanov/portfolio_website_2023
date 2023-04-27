@@ -13,6 +13,8 @@ import { staggerContainer, textVariant } from '@/utils/motion';
 import devPic from '../public/developer-pic-2.jpg'
 
 
+const revalidate = 60;
+
 //TODO: Add proper value type instead of any
 //
 const AnimatedNumbers = ({ value }: any) => {
