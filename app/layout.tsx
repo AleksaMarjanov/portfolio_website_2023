@@ -1,6 +1,9 @@
-import { Footer, Navbar } from '@/components';
+import { Footer, Navbar } from "@/components";
+import { Montserrat } from "next/font/google";
+import type { PropsWithChildren } from "react";
 import './globals.css'
-import { Montserrat } from 'next/font/google'
+import React from 'react'
+import LayoutAnimatePresence from "./LayoutAnimatePresence";
 
 const montserrat = Montserrat({
     weight: ["400", "700"],
@@ -8,24 +11,18 @@ const montserrat = Montserrat({
     variable: "--font-montserrat",
 });
 
-export const metadata = {
-    title: 'Software Developer - Aleksa Marjanov',
-    description: 'Web Developer | Software Developer, create unique designs',
-}
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
-
+export default function RootLayout({ children }: PropsWithChildren) {
     return (
         <html lang="en">
             <body className={`${montserrat.className} bg-light w-full min-h-screen `} >
                 <Navbar />
-                {children}
+                <LayoutAnimatePresence>
+                    {children}
+                </LayoutAnimatePresence>
                 <Footer />
             </body>
         </html >
+
     )
 }
